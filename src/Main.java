@@ -20,7 +20,6 @@ public class Main {
                     switch (opcion) {
                         case 1:
                             cargar();
-                            
                             break;
                         case 2:
                             listar();
@@ -58,8 +57,8 @@ public class Main {
     }
 
     public static void sueldoMenor(){
-        int menor=0;
-        for (int i = 0; i <= F; i++) {
+        int menor=Matriz[0];
+        for (int i = 0; i < Matriz.length; i++) {
             if (menor>Matriz[i]){
                 menor=Matriz[i];
             }
