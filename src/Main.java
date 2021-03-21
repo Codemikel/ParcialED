@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.SortedMap;
 
@@ -16,7 +17,7 @@ public class Main {
             int opcion=0;
             while(!s ){
                 try {
-                    opcion = Integer.parseInt(JOptionPane.showInputDialog("1) Cargar empleados\n2) Listar empleados\n3) Sueldo Mayor\n4) Ordenar Insercion\n5) Mostrar Ascendente\n6)Sueldo menor\n7) Salir\nDigite el número de la operación a realizar"));
+                    opcion = Integer.parseInt(JOptionPane.showInputDialog("Digite el número de la operación a realizar \n 1) Cargar empleados\n2) Listar empleados\n3) Sueldo Mayor\n4) Ordenar Insercion\n5) Mostrar Ascendente\n6)Sueldo menor\n7) Salir"));
                     switch (opcion) {
                         case 1:
                             cargar();
@@ -28,7 +29,7 @@ public class Main {
                             sueldoMayor();
                             break;
                         case 4:
-                            ordenaInsercion();
+                            mostrarDescendente();
                             break;
                         case 5:
                             mostrarAscendente();
@@ -49,11 +50,17 @@ public class Main {
         }
 
     public static void mostrarAscendente(){
-        for(int i=0; i<=F; i++){
+        for(int i=0; i<F; i++){
             JOptionPane.showMessageDialog(null, Matriz[i]+" ");
         }
-
         System.out.println(" ");
+    }
+
+    public static void mostrarDescendente(){
+        Arrays.sort(Matriz);
+        for (int i = Matriz.length - 1; i >= 0 ; i--) {
+            System.out.println(""+ Matriz[i]);
+        }
     }
 
     public static void sueldoMenor(){
